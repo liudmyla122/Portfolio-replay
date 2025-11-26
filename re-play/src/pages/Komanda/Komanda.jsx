@@ -18,7 +18,7 @@ const teamMembers = [
     id: 1,
     name: 'Константин Рыбаченко',
     role: 'ОСНОВАТЕЛЬ-ОПЕРАТОР',
-    photo: assetPath('/Photos/Foto-1.svg'),
+    photo: assetPath('/Photos/Foto-1.png'),
   },
   {
     id: 2,
