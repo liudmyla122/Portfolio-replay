@@ -1,0 +1,10 @@
+# Node dependencies
+node_modules/
+re-play/node_modules/
+
+# Vite build artifacts
+re-play/dist/
+
+# macOS clutter
+.DS_Store
+Thumbs.db
