@@ -3,9 +3,14 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import styles from './Header.module.css'
 
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
 const HEADER_ICONS = {
-  logo: '/icons/Logo.svg',
-  arrow: '/icons/Icon.svg',
+  logo: assetPath('/icons/Logo.svg'),
+  arrow: assetPath('/icons/Icon.svg'),
 }
 
 // Список всех секций, которые нужно отслеживать

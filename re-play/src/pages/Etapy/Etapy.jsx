@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from './Etapy.module.css'
 
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
 const ETAPY_ICONS = {
-  logo: '/icons/Logo.svg',
-  services: '/icons/icon-play.svg',
+  logo: assetPath('/icons/Logo.svg'),
+  services: assetPath('/icons/icon-play.svg'),
 }
 
 const Marquee = () => {

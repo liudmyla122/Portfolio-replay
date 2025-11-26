@@ -2,7 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Services.module.css'
 
-const SERVICES_ICON_PATH = '/icons/icon-pl.svg'
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
+const SERVICES_ICON_PATH = assetPath('/icons/icon-pl.svg')
 
 const servicesData = [
   // ... (ваш servicesData массив без изменений)

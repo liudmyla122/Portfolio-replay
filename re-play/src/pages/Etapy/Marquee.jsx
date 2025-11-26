@@ -1,7 +1,12 @@
 import React from 'react'
 import styles from './Etapy.module.css'
 
-const LOGO_PATH = '/icons/Logo.svg'
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
+const LOGO_PATH = assetPath('/icons/Logo.svg')
 
 const Marquee = () => {
   const items = Array(20).fill(null) // Уменьшим количество для производительности

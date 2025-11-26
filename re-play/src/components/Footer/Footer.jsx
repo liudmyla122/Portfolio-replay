@@ -4,10 +4,15 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Footer.module.css'
 
+const buildPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
 const SOCIAL_ICONS = {
-  facebook: '/icons/Facebook.svg',
-  instagram: '/icons/instagram.svg',
-  linkedin: '/icons/linkedin.svg',
+  facebook: buildPath('/icons/Facebook.svg'),
+  instagram: buildPath('/icons/instagram.svg'),
+  linkedin: buildPath('/icons/linkedin.svg'),
 }
 
 // Варианты анимации для Framer Motion

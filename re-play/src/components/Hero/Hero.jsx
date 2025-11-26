@@ -4,10 +4,15 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import styles from './Hero.module.css'
 
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
 const SOCIAL_ICONS = {
-  instagram: '/icons/instagram.svg',
-  facebook: '/icons/facebook.svg',
-  linkedin: '/icons/linkedin.svg',
+  instagram: assetPath('/icons/instagram.svg'),
+  facebook: assetPath('/icons/facebook.svg'),
+  linkedin: assetPath('/icons/linkedin.svg'),
 }
 
 const Hero = () => {
@@ -49,7 +54,7 @@ const Hero = () => {
       <div className={styles.videoContainer}>
         <video
           className={styles.video}
-          src="/videos/replayvideo.mp4"
+          src={assetPath('/videos/replayvideo.mp4')}
           autoPlay
           muted
           loop

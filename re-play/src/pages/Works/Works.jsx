@@ -2,18 +2,23 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Works.module.css'
 
-const PLAY_ICON_PATH = '/icons/play.svg'
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
+const PLAY_ICON_PATH = assetPath('/icons/play.svg')
 
 const projectMedia = [
-  { id: 1, video: '/videos/video-1.mp4', thumb: '/thumbnails/thumb1.jpg' },
-  { id: 2, video: '/videos/video-2.mp4', thumb: '/thumbnails/thumb2.jpg' },
-  { id: 3, video: '/videos/video-3.mp4', thumb: '/thumbnails/thumb3.jpg' },
-  { id: 4, video: '/videos/video-4.mp4', thumb: '/thumbnails/thumb4.jpg' },
-  { id: 5, video: '/videos/video-5.mp4', thumb: '/thumbnails/thumb5.jpg' },
-  { id: 6, video: '/videos/video-6.mp4', thumb: '/thumbnails/thumb6.jpg' },
-  { id: 7, video: '/videos/video-7.mp4', thumb: '/thumbnails/thumb7.jpg' },
-  { id: 8, video: '/videos/video-8.mp4', thumb: '/thumbnails/thumb8.jpg' },
-  { id: 9, video: '/videos/video-9.mp4', thumb: '/thumbnails/thumb9.jpg' },
+  { id: 1, video: assetPath('/videos/video-1.mp4'), thumb: assetPath('/thumbnails/thumb1.jpg') },
+  { id: 2, video: assetPath('/videos/video-2.mp4'), thumb: assetPath('/thumbnails/thumb2.jpg') },
+  { id: 3, video: assetPath('/videos/video-3.mp4'), thumb: assetPath('/thumbnails/thumb3.jpg') },
+  { id: 4, video: assetPath('/videos/video-4.mp4'), thumb: assetPath('/thumbnails/thumb4.jpg') },
+  { id: 5, video: assetPath('/videos/video-5.mp4'), thumb: assetPath('/thumbnails/thumb5.jpg') },
+  { id: 6, video: assetPath('/videos/video-6.mp4'), thumb: assetPath('/thumbnails/thumb6.jpg') },
+  { id: 7, video: assetPath('/videos/video-7.mp4'), thumb: assetPath('/thumbnails/thumb7.jpg') },
+  { id: 8, video: assetPath('/videos/video-8.mp4'), thumb: assetPath('/thumbnails/thumb8.jpg') },
+  { id: 9, video: assetPath('/videos/video-9.mp4'), thumb: assetPath('/thumbnails/thumb9.jpg') },
 ]
 
 const initialProjects = projectMedia.map((item) => ({

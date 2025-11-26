@@ -2,7 +2,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Stoimost.module.css'
 
-const STOIMOST_LOGO = '/icons/Logo-gros.svg'
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
+const STOIMOST_LOGO = assetPath('/icons/Logo-gros.svg')
 
 const Stoimost = () => {
   return (

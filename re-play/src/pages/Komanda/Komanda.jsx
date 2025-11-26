@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Komanda.module.css'
 import Modal from './Modal'
 
-// Импортируем SVG-файлы как изображения
+const assetPath = (path) => {
+  const base = import.meta.env.BASE_URL || '/'
+  return `${base}${path.replace(/^\/+/, '')}`
+}
+
 const CONTROL_ICONS = {
-  left: '/icons/Levo.svg',
-  right: '/icons/Pravo.svg',
+  left: assetPath('/icons/Levo.svg'),
+  right: assetPath('/icons/Pravo.svg'),
 }
 
 const teamMembers = [
@@ -14,37 +18,37 @@ const teamMembers = [
     id: 1,
     name: 'Константин Рыбаченко',
     role: 'ОСНОВАТЕЛЬ-ОПЕРАТОР',
-    photo: '/Photos/Foto-1.svg',
+    photo: assetPath('/Photos/Foto-1.svg'),
   },
   {
     id: 2,
     name: 'Ксения Малевская',
     role: 'ПРОДЮСЕР',
-    photo: '/Photos/Foto-2.svg',
+    photo: assetPath('/Photos/Foto-2.svg'),
   },
   {
     id: 3,
     name: 'Александр Дин',
     role: 'МОНТАЖ',
-    photo: '/Photos/Foto-3.svg',
+    photo: assetPath('/Photos/Foto-3.svg'),
   },
   {
     id: 4,
     name: 'Владислав Ковалев',
     role: '3D ARTIST',
-    photo: '/Photos/Foto-4.svg',
+    photo: assetPath('/Photos/Foto-4.svg'),
   },
   {
     id: 5,
     name: 'Игорь Алексеенко',
     role: 'VFX',
-    photo: '/Photos/Foto-5.svg',
+    photo: assetPath('/Photos/Foto-5.svg'),
   },
   {
     id: 6,
     name: 'Штефан Филитов',
     role: 'ПРОДЮСЕР',
-    photo: '/Photos/Foto-6.svg',
+    photo: assetPath('/Photos/Foto-6.svg'),
   },
 ]
 
@@ -95,7 +99,7 @@ const Komanda = () => {
               onClick={toggleModal}
             >
               <img
-                src="/Photos/Foto-7.svg"
+                src={assetPath('/Photos/Foto-7.svg')}
                 alt="Присоединиться к команде"
                 className={styles.photo}
               />
