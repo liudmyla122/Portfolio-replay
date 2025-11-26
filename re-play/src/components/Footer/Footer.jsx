@@ -4,11 +4,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Footer.module.css'
 
-// ⚠️ ПУТИ К ИКОНКАМ: УКАЖИТЕ СВОИ ПУТИ!
-// Я предполагаю, что они лежат в src/public/icons/
-import FacebookIcon from '../../../public/icons/Facebook.svg'
-import InstagramIcon from '../../../public/icons/instagram.svg'
-import LinkedinIcon from '../../../public/icons/linkedin.svg'
+const SOCIAL_ICONS = {
+  facebook: '/icons/Facebook.svg',
+  instagram: '/icons/instagram.svg',
+  linkedin: '/icons/linkedin.svg',
+}
 
 // Варианты анимации для Framer Motion
 const containerVariants = {
@@ -92,21 +92,21 @@ const Footer = () => {
             {/* ⚠️ Иконки: Укажите правильные пути выше */}
             <a href="#" target="_blank" aria-label="Facebook">
               <img
-                src={FacebookIcon}
+                src={SOCIAL_ICONS.facebook}
                 alt="Facebook"
                 className={styles.socialIcon}
               />
             </a>
             <a href="#" target="_blank" aria-label="Instagram">
               <img
-                src={InstagramIcon}
+                src={SOCIAL_ICONS.instagram}
                 alt="Instagram"
                 className={styles.socialIcon}
               />
             </a>
             <a href="#" target="_blank" aria-label="LinkedIn">
               <img
-                src={LinkedinIcon}
+                src={SOCIAL_ICONS.linkedin}
                 alt="LinkedIn"
                 className={styles.socialIcon}
               />

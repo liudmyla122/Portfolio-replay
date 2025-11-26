@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Etapy.module.css'
-import logo from '/icons/Logo.svg'
+
+const LOGO_PATH = '/icons/Logo.svg'
 
 const Marquee = () => {
   const items = Array(20).fill(null) // Уменьшим количество для производительности
@@ -15,7 +16,7 @@ const Marquee = () => {
               <span className={styles.marqueeItem}>re.play</span>
               <span className={styles.marqueeDot}></span>
               <img
-                src={logo}
+                src={LOGO_PATH}
                 alt="re.play logo"
                 className={styles.marqueeLogo}
               />
@@ -31,7 +32,7 @@ const Marquee = () => {
               <span className={styles.marqueeItem}>re.play</span>
               <span className={styles.marqueeDot}></span>
               <img
-                src={logo}
+                src={LOGO_PATH}
                 alt="re.play logo"
                 className={styles.marqueeLogo}
               />

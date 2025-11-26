@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Services.module.css'
-import servicesIcon from '/icons/icon-pl.svg'
+
+const SERVICES_ICON_PATH = '/icons/icon-pl.svg'
 
 const servicesData = [
   // ... (ваш servicesData массив без изменений)
@@ -90,7 +91,7 @@ const Services = () => {
           >
             <h2 className={styles.servicesTitle}>Услуги</h2>
             <motion.img
-              src={servicesIcon}
+              src={SERVICES_ICON_PATH}
               alt="Services Icon"
               className={styles.icon}
               animate={{

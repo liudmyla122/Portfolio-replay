@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import styles from './Hero.module.css'
 
-// Импортируем иконки для социальных сетей.
-import InstagramIcon from '/icons/instagram.svg'
-import FacebookIcon from '/icons/facebook.svg'
-import LinkedinIcon from '/icons/linkedin.svg'
+const SOCIAL_ICONS = {
+  instagram: '/icons/instagram.svg',
+  facebook: '/icons/facebook.svg',
+  linkedin: '/icons/linkedin.svg',
+}
 
 const Hero = () => {
   // Варианты анимации для контейнера.
@@ -48,7 +49,7 @@ const Hero = () => {
       <div className={styles.videoContainer}>
         <video
           className={styles.video}
-          src="/public/videos/replayvideo.mp4"
+          src="/videos/replayvideo.mp4"
           autoPlay
           muted
           loop
@@ -103,21 +104,21 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={InstagramIcon} alt="Instagram" />
+            <img src={SOCIAL_ICONS.instagram} alt="Instagram" />
           </a>
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={FacebookIcon} alt="Facebook" />
+            <img src={SOCIAL_ICONS.facebook} alt="Facebook" />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={LinkedinIcon} alt="LinkedIn" />
+            <img src={SOCIAL_ICONS.linkedin} alt="LinkedIn" />
           </a>
         </motion.div>
       </div>

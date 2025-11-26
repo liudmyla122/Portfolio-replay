@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './Etapy.module.css'
-// Логотип для бегущей строки
-import logo from '/icons/Logo.svg'
-// Иконка для центральной секции
-import ServicesIcon from '/icons/icon-play.svg'
+
+const ETAPY_ICONS = {
+  logo: '/icons/Logo.svg',
+  services: '/icons/icon-play.svg',
+}
 
 const Marquee = () => {
   return (
@@ -11,19 +12,19 @@ const Marquee = () => {
       <div className={styles.marquee}>
         <div className={styles.marqueeContent}>
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
           <span className={styles.marqueeItem}>re.play</span>
-          <img src={logo} alt="re.play logo" className={styles.marqueeLogo} />
+          <img src={ETAPY_ICONS.logo} alt="re.play logo" className={styles.marqueeLogo} />
         </div>
       </div>
     </div>
@@ -72,7 +73,7 @@ const Etapy = () => {
         <div className={styles.centerColumn}>
           <div className={styles.servicesTitleUnderline} />
           <h2 className={styles.servicesTitle}>Как мы работаем?</h2>
-          <img src={ServicesIcon} alt="Services Icon" className={styles.icon} />
+          <img src={ETAPY_ICONS.services} alt="Services Icon" className={styles.icon} />
         </div>
 
         <div className={styles.rightColumn}>

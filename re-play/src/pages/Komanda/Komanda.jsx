@@ -4,52 +4,47 @@ import styles from './Komanda.module.css'
 import Modal from './Modal'
 
 // Импортируем SVG-файлы как изображения
-import foto1 from '/Photos/Foto-1.svg'
-import foto2 from '/Photos/Foto-2.svg'
-import foto3 from '/Photos/Foto-3.svg'
-import foto4 from '/Photos/Foto-4.svg'
-import foto5 from '/Photos/Foto-5.svg'
-import foto6 from '/Photos/Foto-6.svg'
-import joinUsPhoto from '/Photos/Foto-7.svg'
-import ArrowLeft from '/icons/Levo.svg'
-import ArrowRight from '/icons/Pravo.svg'
+const CONTROL_ICONS = {
+  left: '/icons/Levo.svg',
+  right: '/icons/Pravo.svg',
+}
 
 const teamMembers = [
   {
     id: 1,
     name: 'Константин Рыбаченко',
     role: 'ОСНОВАТЕЛЬ-ОПЕРАТОР',
-    photo: foto1,
+    photo: '/Photos/Foto-1.svg',
   },
   {
     id: 2,
     name: 'Ксения Малевская',
     role: 'ПРОДЮСЕР',
-    photo: foto2,
+    photo: '/Photos/Foto-2.svg',
   },
   {
     id: 3,
     name: 'Александр Дин',
     role: 'МОНТАЖ',
-    photo: foto3,
+    photo: '/Photos/Foto-3.svg',
   },
   {
     id: 4,
     name: 'Владислав Ковалев',
     role: '3D ARTIST',
-    photo: foto4,
+    photo: '/Photos/Foto-4.svg',
   },
   {
     id: 5,
     name: 'Игорь Алексеенко',
     role: 'VFX',
-    photo: foto5,
+    photo: '/Photos/Foto-5.svg',
   },
   {
     id: 6,
     name: 'Штефан Филитов',
     role: 'ПРОДЮСЕР',
-    photo: foto6,
+    photo: '/Photos/Foto-6.svg',
   },
 ]
 
@@ -100,7 +95,7 @@ const Komanda = () => {
               onClick={toggleModal}
             >
               <img
-                src={joinUsPhoto}
+                src="/Photos/Foto-7.svg"
                 alt="Присоединиться к команде"
                 className={styles.photo}
               />
@@ -114,10 +109,10 @@ const Komanda = () => {
         </div>
         <div className={styles.controls}>
           <button className={styles.arrow}>
-            <img src={ArrowLeft} alt="Предыдущий" />
+            <img src={CONTROL_ICONS.left} alt="Предыдущий" />
           </button>
           <button className={styles.arrow}>
-            <img src={ArrowRight} alt="Следующий" />
+            <img src={CONTROL_ICONS.right} alt="Следующий" />
           </button>
         </div>
         <AnimatePresence>

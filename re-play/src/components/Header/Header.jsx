@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Link, Events, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 import styles from './Header.module.css'
-import Logo from '/icons/Logo.svg'
-import ArrowDown from '/icons/Icon.svg'
+
+const HEADER_ICONS = {
+  logo: '/icons/Logo.svg',
+  arrow: '/icons/Icon.svg',
+}
 
 // Список всех секций, которые нужно отслеживать
 const SECTION_IDS = [
@@ -117,7 +120,7 @@ const Header = () => {
             setActiveSection('home') // Устанавливаем при клике
           }}
         >
-          <img src={Logo} alt="RE Logo" className={styles.logoImage} />
+          <img src={HEADER_ICONS.logo} alt="RE Logo" className={styles.logoImage} />
         </Link>
       </motion.div>
       <motion.nav
@@ -183,7 +186,7 @@ const Header = () => {
           className={styles.languageButton}
         >
           {currentLanguage}{' '}
-          <img src={ArrowDown} alt="Arrow Down" className={styles.arrowIcon} />
+          <img src={HEADER_ICONS.arrow} alt="Arrow Down" className={styles.arrowIcon} />
         </button>
         {isLanguageOpen && (
           <ul className={styles.languageList}>

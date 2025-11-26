@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Stoimost.module.css'
-import YourLogo from '/icons/Logo-gros.svg'
+
+const STOIMOST_LOGO = '/icons/Logo-gros.svg'
 
 const Stoimost = () => {
   return (
@@ -29,7 +30,7 @@ const Stoimost = () => {
                 }}
               >
                 {/* ⚠️ Используйте тег <img> для отображения SVG-файла */}
-                <img src={YourLogo} alt="Логотип" className={styles.logoSvg} />
+                <img src={STOIMOST_LOGO} alt="Логотип" className={styles.logoSvg} />
               </motion.div>
             </div>
 

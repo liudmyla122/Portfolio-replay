@@ -1,84 +1,27 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Works.module.css'
-import PlayIcon from '/icons/play.svg'
 
-// ✅ Используем импорты файлов для каждого видео
-import video1 from '/videos/video-1.mp4'
-import thumb1 from '/thumbnails/thumb1.jpg'
-import video2 from '/videos/video-2.mp4'
-import thumb2 from '/thumbnails/thumb2.jpg'
-import video3 from '/videos/video-3.mp4'
-import thumb3 from '/thumbnails/thumb3.jpg'
-import video4 from '/videos/video-4.mp4'
-import thumb4 from '/thumbnails/thumb4.jpg'
-import video5 from '/videos/video-5.mp4'
-import thumb5 from '/thumbnails/thumb5.jpg'
-import video6 from '/videos/video-6.mp4'
-import thumb6 from '/thumbnails/thumb6.jpg'
-import video7 from '/videos/video-7.mp4'
-import thumb7 from '/thumbnails/thumb7.jpg'
-import video8 from '/videos/video-8.mp4'
-import thumb8 from '/thumbnails/thumb8.jpg'
-import video9 from '/videos/video-9.mp4'
-import thumb9 from '/thumbnails/thumb9.jpg'
+const PLAY_ICON_PATH = '/icons/play.svg'
 
-const initialProjects = [
-  {
-    id: 1,
-    videoUrl: video1,
-    thumbnailUrl: thumb1,
-    title: 'Video 1',
-  },
-  {
-    id: 2,
-    videoUrl: video2,
-    thumbnailUrl: thumb2,
-    title: 'Video 2',
-  },
-  {
-    id: 3,
-    videoUrl: video3,
-    thumbnailUrl: thumb3,
-    title: 'Video 3',
-  },
-  {
-    id: 4,
-    videoUrl: video4,
-    thumbnailUrl: thumb4,
-    title: 'Video 4',
-  },
-  {
-    id: 5,
-    videoUrl: video5,
-    thumbnailUrl: thumb5,
-    title: 'Video 5',
-  },
-  {
-    id: 6,
-    videoUrl: video6,
-    thumbnailUrl: thumb6,
-    title: 'Video 6',
-  },
-  {
-    id: 7,
-    videoUrl: video7,
-    thumbnailUrl: thumb7,
-    title: 'Video 7',
-  },
-  {
-    id: 8,
-    videoUrl: video8,
-    thumbnailUrl: thumb8,
-    title: 'Video 8',
-  },
-  {
-    id: 9,
-    videoUrl: video9,
-    thumbnailUrl: thumb9,
-    title: 'Video 9',
-  },
+const projectMedia = [
+  { id: 1, video: '/videos/video-1.mp4', thumb: '/thumbnails/thumb1.jpg' },
+  { id: 2, video: '/videos/video-2.mp4', thumb: '/thumbnails/thumb2.jpg' },
+  { id: 3, video: '/videos/video-3.mp4', thumb: '/thumbnails/thumb3.jpg' },
+  { id: 4, video: '/videos/video-4.mp4', thumb: '/thumbnails/thumb4.jpg' },
+  { id: 5, video: '/videos/video-5.mp4', thumb: '/thumbnails/thumb5.jpg' },
+  { id: 6, video: '/videos/video-6.mp4', thumb: '/thumbnails/thumb6.jpg' },
+  { id: 7, video: '/videos/video-7.mp4', thumb: '/thumbnails/thumb7.jpg' },
+  { id: 8, video: '/videos/video-8.mp4', thumb: '/thumbnails/thumb8.jpg' },
+  { id: 9, video: '/videos/video-9.mp4', thumb: '/thumbnails/thumb9.jpg' },
 ]
+
+const initialProjects = projectMedia.map((item) => ({
+  id: item.id,
+  videoUrl: item.video,
+  thumbnailUrl: item.thumb,
+  title: `Video ${item.id}`,
+}))
 
 const Works = () => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -119,7 +62,7 @@ const Works = () => {
               className={styles.projectThumbnail}
             />
             <div className={styles.playButton}>
-              <img src={PlayIcon} alt="Play" />
+              <img src={PLAY_ICON_PATH} alt="Play" />
             </div>
           </motion.div>
         ))}
